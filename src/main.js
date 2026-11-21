@@ -53,6 +53,11 @@ function toast(text, err) {
 
 async function api(path, opts = {}) {
   const init = { method: opts.method || "GET", headers: {}, credentials: "same-origin" };
+  const session = await getUser().catch(() => null);
+const token = session?.token?.access_token ?? session?.access_token;
+if (token) {
+  init.headers.Authorization = `Bearer ${token}`;
+}
   if (opts.form) init.body = opts.form;
   else if (opts.body !== undefined) {
     init.headers["Content-Type"] = "application/json";
