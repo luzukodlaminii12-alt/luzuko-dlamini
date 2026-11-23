@@ -22,13 +22,27 @@ let S = {
       { id: null, title: "Starbucks Booth", imgs: [{ id: null, src: "/media/starbucks-booth.jpg", t: "i" }] },
     ],
     mg: [
-  { id: null, title: "NIVEA AD", imgs: [{ id: null, src: "/media/nivea-ad.mp4", t: "v" }] },
-  { id: null, title: "Motion Graphics — d-1", imgs: [{ id: null, src: "/media/d-1.mp4", t: "v" }] },
-  ...["1714", "1710", "1705", "1700", "1695", "1690", "1685", "1679", "1676"].map(name => ({
+  ...[
+    ["Body Cream", "body cream.mp4"],
+    ["Coffee", "coffee.mp4"],
+    ["Commercial", "commercial.mp4"],
+    ["Motion Graphics", "d_1.mp4"],
+    ["Fanta Orange", "fanta orange.mp4"],
+    ["L'Oreal", "loreal.mp4"],
+    ["NIVEA AD", "NIVEA AD.mp4"],
+    ["Sunglasses", "suninglass 2.mp4"],
+    ["Tropican", "tropican.mp4"]
+  ].map(([title, filename]) => ({
     id: null,
-    title: `Motion Graphics — ${name}`,
-    imgs: [{ id: null, src: `/media/${name}.mp4`, t: "v" }]
-  })),
+    title,
+    imgs: [{
+      id: null,
+      src: `/media/${encodeURIComponent(filename)}`,
+      t: "v"
+    }]
+  }))
+],
+
 ],
   },
   links: [
