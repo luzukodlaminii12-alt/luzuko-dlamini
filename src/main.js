@@ -11,6 +11,33 @@ import {
   MissingIdentityError,
 } from "@netlify/identity";
 
+// Globally disable portfolio audio
+function muteAllMedia() {
+  document.querySelectorAll("video, audio").forEach(media => {
+    media.muted = true;
+    media.defaultMuted = true;
+    media.volume = 0;
+    media.setAttribute("muted", "");
+  });
+}
+
+document.addEventListener("volumechange", event => {
+  const media = event.target;
+  if (media instanceof HTMLMediaElement) {
+    if (!media.muted) media.muted = true;
+    if (media.volume !== 0) media.volume = 0;
+  }
+}, true);
+
+document.addEventListener("play", muteAllMedia, true);
+
+new MutationObserver(muteAllMedia).observe(document.documentElement, {
+  childList: true,
+  subtree: true
+});
+
+muteAllMedia();
+
 const $ = (id) => document.getElementById(id);
 const MAX_MB = 20;
 
