@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luzuko Dlamini · Johannesburg</title>
+<meta name="description" content="Luzuko Dlamini, Johannesburg. 3D visualisation, motion graphics and digital applications.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+<nav>
+  <a class="logo" href="#top">LD<span>.</span></a>
+  <ul>
+    <li><a href="#work">Work</a></li><li><a href="#motion">Motion</a></li><li><a href="#" id="aboutL">About</a></li><li><a href="#apps">Apps</a></li><li><a href="#links">Links</a></li>
+    <li class="nav-admin"><button class="pill" id="adminBtn" type="button" hidden>Edit site</button></li>
+  </ul>
+</nav>
+<div class="editbar" id="editbar" hidden>
+  <span>Editing mode: your changes go live straight away</span>
+  <span><button type="button" id="doneBtn">Done</button> <button type="button" id="logoutBtn">Log out</button></span>
+</div>
+
+<header class="hero" id="top">
+  <div class="loc">Johannesburg, South Africa</div>
+  <h1 class="name disp"><span class="a">Luzuko</span><span class="b">Dlamini</span></h1>
+  <p class="tag">From the streets of Joburg • Building digital applications &amp; interactive products with South African energy.</p>
+  <div class="btns">
+    <a class="btn w" href="#apps">Explore Apps ↗</a>
+    <a class="btn" href="#" id="cv">CV / Resume</a>
+    <a class="btn" href="#links">Let’s Connect</a>
+  </div>
+</header>
+
+<section id="work">
+  <div class="head"><div><div class="eyebrow">Selected Work</div><h2 class="disp" style="text-transform:none">The Work <span class="tagd">3D</span></h2></div><div class="count" id="c_d3"></div></div>
+  <div class="grid" id="g_d3"></div>
+</section>
+
+<section id="motion" style="border-top:1px solid var(--line)">
+  <div class="head"><div><div class="eyebrow">Selected Work</div><h2 class="disp">Motion Graphics</h2></div><div class="count" id="c_mg"></div></div>
+  <div class="grid" id="g_mg"></div>
+</section>
+
+<section class="dark" id="apps"><div class="wrap">
+  <div class="eyebrow">● Software &amp; Digital Lab</div>
+  <h2 class="disp">My Apps</h2>
+  <p class="sub">A collection of full-stack web applications, AI utilities, and interactive productivity tools engineered from scratch.</p>
+  <article class="app" id="appCard">
+    <div class="appimg" id="appImgWrap"><img id="appImg" alt="WRATH / iDREAMIT" src="/media/wrath-idreamit.jpg"></div>
+    <div class="tx">
+      <h3 class="disp" id="appTitle">WRATH / iDREAMIT</h3>
+      <p id="appDesc">Custom hardware engineering synthesis, PCB prototyping, and co-founding partnership platform.</p>
+      <a class="go" id="appGo" href="#" hidden target="_blank" rel="noopener">Launch app ↗</a>
+      <p id="appSoon" class="sm" style="color:#777;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700">Launching soon</p>
+    </div>
+  </article>
+  <div class="panel" id="appPanel" hidden>
+    <h4>Edit app card</h4>
+    <div class="two">
+      <label class="field"><span>App name</span><input id="appTitleIn" maxlength="200"></label>
+      <label class="field"><span>Live app address (Launch app button)</span><input id="appUrlIn" placeholder="https://your-app.netlify.app" inputmode="url"></label>
+    </div>
+    <label class="field"><span>Description</span><textarea id="appDescIn" maxlength="400"></textarea></label>
+    <div class="acts"><button class="primary" style="width:auto;padding:0 28px" id="appSave" type="button">Save app card</button></div>
+  </div>
+</div></section>
+
+<section class="foot" id="links" style="border-top:1px solid var(--line)">
+  <div class="eyebrow">Connect</div><h2 class="disp">Digital Footprint</h2>
+  <div class="links" id="linkList"></div>
+  <div class="panel links" id="linkPanel" hidden style="max-width:980px;text-align:left">
+    <h4>Edit links</h4>
+    <label class="field"><span>Contact email (Email Me button)</span><input id="emailIn" type="email"></label>
+    <p class="hint" style="color:#999;font-size:13px;margin:4px 0 12px">Links without an address stay hidden from visitors until you add one.</p>
+    <div id="linkRows"></div>
+    <div class="acts"><button class="ghost" id="linkAdd" type="button">+ Add link</button><button class="primary" style="width:auto;padding:0 28px" id="linkSave" type="button">Save links</button></div>
+  </div>
+</section>
+
+<footer>© 2026 Luzuko Dlamini • Proudly South African • Johannesburg<br><button class="footlink" id="ownerLogin" type="button">Owner login</button></footer>
+<div id="cvm" class="modal" role="dialog" aria-label="Curriculum Vitae"><div class="cvin">
+<button class="x" id="cvx" type="button" aria-label="Close">✕</button>
+<h2 class="disp cvt">Curriculum Vitae</h2>
+<div class="cvacts"><button class="ghost" id="cvPrint" type="button">Print / Save as PDF</button><a class="ghost" id="cvMail" href="mailto:luzukodlaminii12@gmail.com" style="text-decoration:none">Email me</a></div>
+<div class="cvg">
+<div class="pc tall"><h3 class="disp"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>Technical Skills</h3><div class="sk">Python<span class="">Working Knowledge</span></div><div class="sk">Rust<span class="g">Proficient</span></div><div class="sk">C++ / Arduino<span class="">Basic</span></div><div class="sk">Electronics &amp; Hardware<span class="">Intermediate</span></div><div class="sk">Web Development<span class="">Intermediate</span></div><div class="sk">3D Visualization<span class="">Good</span></div><div class="sk">AI-Assisted Development<span class="">Working Knowledge</span></div></div>
+<div class="pc"><h3 class="disp"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>Build Focus</h3><div class="it o"><b>Rapid Prototyping</b><p>Quick iteration from concept to working prototype</p></div><div class="it o"><b>Hardware / Software Integration</b><p>Bridging physical and digital systems</p></div><div class="it o"><b>Practical Problem Solving</b><p>Real-world solutions that actually work</p></div></div>
+<div class="pc"><h3 class="disp"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>Projects</h3><div class="it"><b>Electronics &amp; Hardware</b><p>Built Arduino prototypes combining programming and electronics.</p></div><div class="it"><b>Web Development</b><p>Designed web applications and used AI-assisted development for rapid prototyping.</p></div><div class="it"><b>3D Visualization</b><p>Created 3D models and visualizations for technical and product concepts.</p></div></div>
+<div class="pc"><h3 class="disp"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg>Education</h3><p class="big">Reggie Masuku Secondary School</p><p class="gr">Secondary School</p></div>
+<div class="pc"><h3 class="disp"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 18c1-3 9-3 10 0"/></svg>Contact</h3><p class="ln">Phone: <a href="tel:+27640637590" style="color:inherit">0640637590</a></p><p class="ln">Email: <a id="cvEmail" href="mailto:luzukodlaminii12@gmail.com" style="color:inherit">luzukodlaminii12@gmail.com</a></p><p class="ln" style="margin-bottom:4px">Location: Roodepoort, Gauteng</p><p class="sm">Mountain View North, Wilgeheuwel</p></div>
+</div></div></div>
+<div id="lb"></div>
+
+<div id="authm" class="modal" role="dialog" aria-label="Owner login"><div class="authbox">
+  <button class="x" id="authx" type="button" aria-label="Close">✕</button>
+  <h2 class="disp" id="authTitle">Owner login</h2>
+  <p class="hint" id="authHint">Log in to upload photos and edit your site.</p>
+  <div class="msg" id="authMsg" hidden></div>
+  <form id="authForm" novalidate>
+    <label class="field" id="emailField"><span>Email</span><input id="authEmail" type="email" autocomplete="username" required></label>
+    <label class="field" id="passField"><span>Password</span><input id="authPass" type="password" autocomplete="current-password" minlength="6" required></label>
+    <button class="primary" id="authGo" type="submit">Log in</button>
+  </form>
+  <div class="authlinks" id="authLinks">
+    <button type="button" id="toSignup">First time? Create your owner account</button>
+    <button type="button" id="toForgot">Forgot password?</button>
+    <button type="button" id="toLogin" hidden>Back to login</button>
+  </div>
+</div></div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
