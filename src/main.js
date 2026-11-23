@@ -25,11 +25,10 @@ let S = {
   ...[
     ["Body Cream", "body cream.mp4"],
     ["Coffee", "coffee.mp4"],
-    ["Commercial", "commercial.mp4"],
-    ["Motion Graphics", "d_1.mp4"],
+    ["Motion Graphics", "d-1.mp4"],
     ["Fanta Orange", "fanta orange.mp4"],
     ["L'Oreal", "loreal.mp4"],
-    ["NIVEA AD", "NIVEA AD.mp4"],
+    ["NIVEA AD", "nivea-ad.mp4"],
     ["Sunglasses", "suninglass 2.mp4"],
     ["Tropican", "tropican.mp4"]
   ].map(([title, filename]) => ({
@@ -42,6 +41,7 @@ let S = {
     }]
   }))
 ],
+
 
 ],
   },
