@@ -22,28 +22,23 @@ let S = {
       { id: null, title: "Starbucks Booth", imgs: [{ id: null, src: "/media/starbucks-booth.jpg", t: "i" }] },
     ],
     mg: [
-  ...[
-    ["Body Cream", "body cream.mp4"],
-    ["Coffee", "coffee.mp4"],
-    ["Motion Graphics", "d-1.mp4"],
-    ["Fanta Orange", "fanta orange.mp4"],
-    ["L'Oreal", "loreal.mp4"],
-    ["NIVEA AD", "nivea-ad.mp4"],
-    ["Sunglasses", "suninglass 2.mp4"],
-    ["Tropican", "tropican.mp4"]
-  ].map(([title, filename]) => ({
-    id: null,
-    title,
-    imgs: [{
+      ["Body Cream", "body cream.mp4"],
+      ["Coffee", "coffee.mp4"],
+      ["Motion Graphics", "d-1.mp4"],
+      ["Fanta Orange", "fanta orange.mp4"],
+      ["L'Oreal", "loreal.mp4"],
+      ["NIVEA AD", "nivea-ad.mp4"],
+      ["Sunglasses", "suninglass 2.mp4"],
+      ["Tropican", "tropican.mp4"],
+    ].map(([title, filename]) => ({
       id: null,
-      src: `/media/${encodeURIComponent(filename)}`,
-      t: "v"
-    }]
-  }))
-],
-
-
-],
+      title,
+      imgs: [{
+        id: null,
+        src: `/media/${encodeURIComponent(filename)}`,
+        t: "v",
+      }],
+    })),
   },
   links: [
     { name: "GitHub", description: "Code & open source repositories", badge: "Dev", url: "https://github.com/luzukodlaminii12-alt" },
@@ -724,17 +719,9 @@ async function loadState() {
   try {
     const data = await api("/api/state");
     if (data && data.projects) {
+      const bundledMg = S.projects.mg; // the eight videos defined at the top of this file
       S = data;
-      // These portfolio videos are shipped with the site, so they remain visible
-      // even when the CMS/API returns an empty or older motion gallery.
-      const bundledMotion = [
-        { id: null, title: "NIVEA AD", imgs: [{ id: null, src: "/media/nivea-ad.mp4", t: "v" }] },
-        { id: null, title: "Motion Graphics — d_1", imgs: [{ id: null, src: "/media/d-1.mp4", t: "v" }] },
-      ];
-      S.projects.mg = S.projects.mg || [];
-      for (const item of bundledMotion) {
-        if (!S.projects.mg.some(p => p.imgs?.some(m => m.src === item.imgs[0].src))) S.projects.mg.push(item);
-      }
+      S.projects.mg = bundledMg;
     }
   } catch {}
   redraw();
