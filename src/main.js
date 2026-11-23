@@ -22,9 +22,14 @@ let S = {
       { id: null, title: "Starbucks Booth", imgs: [{ id: null, src: "/media/starbucks-booth.jpg", t: "i" }] },
     ],
     mg: [
-      { id: null, title: "NIVEA AD", imgs: [{ id: null, src: "/media/nivea-ad.mp4", t: "v" }] },
-      { id: null, title: "Motion Graphics — d_1", imgs: [{ id: null, src: "/media/d-1.mp4", t: "v" }] },
-    ],
+  { id: null, title: "NIVEA AD", imgs: [{ id: null, src: "/media/nivea-ad.mp4", t: "v" }] },
+  { id: null, title: "Motion Graphics — d-1", imgs: [{ id: null, src: "/media/d-1.mp4", t: "v" }] },
+  ...["1714", "1710", "1705", "1700", "1695", "1690", "1685", "1679", "1676"].map(name => ({
+    id: null,
+    title: `Motion Graphics — ${name}`,
+    imgs: [{ id: null, src: `/media/${name}.mp4`, t: "v" }]
+  })),
+],
   },
   links: [
     { name: "GitHub", description: "Code & open source repositories", badge: "Dev", url: "https://github.com/luzukodlaminii12-alt" },
